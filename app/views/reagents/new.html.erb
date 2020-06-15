@@ -1,0 +1,5 @@
+<%= form_with model: @reagent, local: true do |f| %>
+  <h1>登録する試薬情報を入力</h1>
+  <p>試薬名：<%= f.text_field :name %></p>
+  <%= f.submit "送信" %>
+<% end %>

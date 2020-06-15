@@ -1,0 +1,9 @@
+<h1>試薬一覧</h1>
+<% if user_signed_in? %>
+  <% @reagents.each do |reagent| %>
+  <p>試薬名：<%= reagent.name %></p>
+  <p>管理者：<%= reagent.user.name.present? ? "#{reagent.user.name}" : "ID : #{reagent.user.id}" %></p>
+  <% end %>
+<% else %>
+  <p>ログインしてください</p>
+<% end %>
