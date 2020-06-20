@@ -13,6 +13,25 @@ class ReagentsController < ApplicationController
     Reagent.create(name: reagent_params[:name], user_id: current_user.id)
   end
 
+  def edit
+    @reagent = Reagent.find(params[:id])
+  end
+
+  def update
+    reagent = Reagent.find(params[:id])
+    reagent.update(reagent_params)
+    redirect_to "/"
+  end
+
+  def destroy
+    reagent = Reagent.find(params[:id])
+    reagent.delete
+  end
+
+  def show
+    @reagent = Reagent.find(params[:id])
+  end
+
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end

@@ -1,0 +1,5 @@
+<%= form_with model: @reagent, url: reagent_path(@reagent.id), html: { method: :patch } do |f| %>
+  <h1>登録する試薬情報を入力</h1>
+  <p>試薬名：<%= f.text_field :name %></p>
+  <%= f.submit "更新" %>
+<% end %>

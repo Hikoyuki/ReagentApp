@@ -3,6 +3,10 @@
   <% @reagents.each do |reagent| %>
   <p>試薬名：<%= reagent.name %></p>
   <p>管理者：<%= reagent.user.name.present? ? "#{reagent.user.name}" : "ID : #{reagent.user.id}" %></p>
+  <%= link_to "詳細", reagent_path(reagent.id) %>
+  <%= link_to "編集", edit_reagent_path(reagent.id), method: :get %>
+  <%= link_to "削除", reagent_path(reagent.id), method: :delete　%>
+  <p><%= l reagent.created_at %><p>
   <% end %>
 <% else %>
   <p>ログインしてください</p>
