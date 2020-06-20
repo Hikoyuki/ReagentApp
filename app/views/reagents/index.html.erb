@@ -2,6 +2,7 @@
 <% if user_signed_in? %>
   <% @reagents.each do |reagent| %>
   <p>試薬名：<%= reagent.name %></p>
+  <%= image_tag reagent.image_url(:thumb) if reagent.image.present? %>
   <p>管理者：<%= reagent.user.name.present? ? "#{reagent.user.name}" : "ID : #{reagent.user.id}" %></p>
   <%= link_to "詳細", reagent_path(reagent.id) %>
   <%= link_to "編集", edit_reagent_path(reagent.id), method: :get %>

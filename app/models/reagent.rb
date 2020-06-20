@@ -4,4 +4,6 @@ class Reagent < ApplicationRecord
   has_many :locations
   has_many :orders
   has_many :consumes
+
+  mount_uploader :image, ImageUploader 
 end
