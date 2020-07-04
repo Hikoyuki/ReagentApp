@@ -1,3 +1,3 @@
 class Location < ApplicationRecord
-  belongs_to :reagent 
+  has_many :reagents
 end

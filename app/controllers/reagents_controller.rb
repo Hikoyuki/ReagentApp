@@ -10,7 +10,11 @@ class ReagentsController < ApplicationController
   end
 
   def create
-    Reagent.create(name: reagent_params[:name],image: reagent_params[:image], user_id: current_user.id)
+    Reagent.create(
+      name: reagent_params[:name],
+      image: reagent_params[:image],
+      user_id: current_user.id
+    )
   end
 
   def edit
