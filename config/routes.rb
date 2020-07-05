@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "reagents#index"
+  root to: "homes#index"
   resources :reagents
-  resources :users, only: :show
   resources :categories, only: :show
   resources :locations, only: :show
 end

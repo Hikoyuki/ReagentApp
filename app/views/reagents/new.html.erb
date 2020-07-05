@@ -1,6 +1,17 @@
+<h2>登録する試薬情報を入力</h2>
+
 <%= form_with model: @reagent, local: true do |f| %>
-  <h1>登録する試薬情報を入力</h1>
-  <p>試薬名：<%= f.text_field :name %></p>
-  <p>画像：<%= f.file_field :image %>
-  <%= f.submit "送信" %>
+  <div class="form-group">
+    <%= label_tag "exampleFormControlInput1", "試薬名" %>
+    <%= f.text_field :name, class:"form-control", id:"exampleFormControlInput1" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "exampleFormControlFile1", "画像" %>
+    <%= f.file_field :image, class:"form-control-file", id:"exampleFormControlFile1" %>
+  </div>
+  <div class="form-group">
+    <%= label_tag "exampleFormControlSelect1", "管理場所" %>
+    <%= select_tag "reagents[location_id]", options_from_collection_for_select(@locations, "id", "name"), class:"form-control", id:"exampleFormControlSelect1" %>
+  </div>
+  <%= button_tag "登録", type: "submit", class:"btn btn-primary" %>
 <% end %>
